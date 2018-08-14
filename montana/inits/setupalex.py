@@ -19,6 +19,7 @@ from Nowack_Lab.Instruments.nidaq       import NIDAQ
 from Nowack_Lab.Instruments.squidarray  import SquidArray
 from Nowack_Lab.Instruments.preamp      import SR5113
 from Nowack_Lab.Instruments.lockin	import SR830
+from Nowack_Lab.Instruments.zurich	import HF2LI
 from Nowack_Lab.Instruments.piezos	import Piezos
 from Nowack_Lab.Instruments.attocube	import Attocube
 from Nowack_Lab.Instruments.montana	import Montana
@@ -41,7 +42,6 @@ from Nowack_Lab.Procedures.array_tune           import ArrayTuneBatch
 
 from Nowack_Lab import set_experiment_data_path
 set_experiment_data_path()
-
 # Initialize DAQ and set input/output channels
 daq = NIDAQ()
 daq.outputs = {
@@ -65,12 +65,11 @@ daq.inputs = {
 # Initialize other measurement equipment
 pa = SR5113(port="COM4")
 liC = SR830(gpib_address=8)
-liS = SR830(gpib_address=9)
+liS = HF2LI()
 pz = Piezos(daq)
 #montana = Montana()
 atto = Attocube()
 s = SquidArray.load()
-#s = SquidArray()
 # Create dictionary of instruments for measurements to use
 instruments = {
     'daq':daq,
