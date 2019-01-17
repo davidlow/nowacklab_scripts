@@ -24,6 +24,11 @@ from Nowack_Lab.Procedures.squidIV2     import SQUID_Mod_FastIV
 from Nowack_Lab.Procedures.squidIV2     import SQUID_Mod_FastMod
 from Nowack_Lab.Procedures.squidIV2     import SQUID_FC_FastMod
 
+import Nowack_Lab.Procedures.alexsave_squidiv
+reload(Nowack_Lab.Procedures.alexsave_squidiv)
+
+from Nowack_Lab.Procedures.alexsave_squidiv import SQUID_testing
+
 
 from Nowack_Lab import set_experiment_data_path
 set_experiment_data_path()

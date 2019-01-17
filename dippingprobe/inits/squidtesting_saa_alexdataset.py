@@ -11,13 +11,12 @@ from Nowack_Lab.Instruments.nidaq       import NIDAQ
 from Nowack_Lab.Instruments.squidarray  import SquidArray
 from Nowack_Lab.Instruments.preamp      import SR5113
 
-import Nowack_Lab.Procedures.mutual_inductance
-import Nowack_Lab.Procedures.array_tune
+import Nowack_Lab.Procedures.alexsave_arraytune
+import Nowack_Lab.Procedures.alexsave_spectrum
 
-from Nowack_Lab.Procedures.mutual_inductance    import MutualInductance2
-from Nowack_Lab.Procedures.array_tune           import ArrayTune
-from Nowack_Lab.Procedures.array_tune           import ArrayTuneBatch
-from Nowack_Lab.Procedures.array_tune           import BestLockPoint
+from Nowack_Lab.Procedures.alexsave_arraytune import SQUID_Noise_Open_Loop
+from Nowack_Lab.Procedures.alexsave_arraytune import SQUID_Noise_Closed_Loop
+from Nowack_Lab.Procedures.alexsave_spectrum import DaqSpectrum
 
 from Nowack_Lab import set_experiment_data_path
 set_experiment_data_path()
@@ -42,3 +41,5 @@ instruments = {
         'squidarray':s,
         'preamp':preamp
 }
+
+s.S_flux_lim=500
